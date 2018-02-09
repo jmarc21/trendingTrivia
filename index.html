@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="app">
 
 <head>
   <meta charset="utf-8">
@@ -9,7 +9,7 @@
   <link rel="shortcut icon" href="/styles/assets/crownFavicon.png">
 </head>
 
-<body>
+<body ng-controller="questionCtrl">
   <header>
     <div></div>
     <h1>Trivia Trends</h1>
@@ -26,24 +26,24 @@
     <div class="search">
       <input type="text" placeholder="Animal to search by">
     </div>
-
     <!-- Questions go here -->
-
+    <question></question>
   </article>
 
+  <ui-view></ui-view>
   <div class="modal">
     <form>
       <h4 class="close">X</h4>
-      <span>Question</span><input type="text" ng-model="<!-- Question -->">
-      <span>Animal it's about</span><input type="text" ng-model="<!-- Animal -->">
+      <!-- <span>Question</span><input type="text" ng-model="Question"> -->
+      <!-- <span>Animal it's about</span><input type="text" ng-model="Animal"> -->
       <span>Difficulty</span>
       <div class="range">
-        <input type="range" min="1" max="3" ng-model="<!-- Difficulty -->">
+        <!-- <input type="range" min="1" max="3" ng-model="Difficulty"> -->
 
         <h5>{{newQuestion.difficulty}}</h5>
       </div>
       <h4>Options</h4>
-      <div>
+      <!-- <div>
         <input type="radio" ng-model="" value="1">
         <input type="text" ng-model="">
       </div>
@@ -58,7 +58,7 @@
       <div>
         <input type="radio" ng-model="" value="4">
         <input type="text" ng-model="">
-      </div>
+      </div> -->
 
       <!--Add question buttons-->
       <div class="buttons">
@@ -81,7 +81,12 @@
 
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.js" charset="utf-8"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.js" charset="utf-8"></script>  
   <script src="./app.js" charset="utf-8"></script>
+  <script src="./routes.js"></script>
+  <script src="./question.js"></script>
+  <script src="./questionCtrl.js"></script>
+  <script src="./services/questionSrvc.js"></script>
 </body>
 
 </html>
