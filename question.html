@@ -5,9 +5,10 @@
   <img src="/styles/assets/gear.svg" alt="">
 </div>
 <ul>
-  <li > <!-- Repeated for each option -->
+  <li ng-repeat="option in question.options"> <!-- Repeated for each option -->
     <input type="radio">
-      <label>{{question.options}}</label>
+    <!-- 47N -->
+      <label>{{option}}</label>
   </li>
 </ul>
 
